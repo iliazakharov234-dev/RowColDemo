@@ -39,10 +39,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            RowColDemoTheme {
+            RowColDemoTheme  {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     MainScreen(modifier = Modifier.padding(innerPadding))
-
                 }
             }
         }
@@ -52,14 +51,19 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-
+    Row(modifier) {
+        TextCell("1")
+        TextCell("2")
+        TextCell("3")
+    }
 }
 
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    StringsDemoTheme {
+    RowColDemoTheme  {
         MainScreen()
     }
 }
+
